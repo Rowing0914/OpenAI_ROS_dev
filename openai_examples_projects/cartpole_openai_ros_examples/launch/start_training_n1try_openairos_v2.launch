@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <rosparam command="load" file="$(find cartpole_openai_ros_examples)/config/cartpole_n1try_params_v2.yaml" />
+    <!-- Launch the training system -->
+    <node pkg="cartpole_openai_ros_examples" name="cartpole3D_n1try_openairos_v2" type="cartpole3D_n1try_openairos_v2.py" output="screen"/>
+</launch>

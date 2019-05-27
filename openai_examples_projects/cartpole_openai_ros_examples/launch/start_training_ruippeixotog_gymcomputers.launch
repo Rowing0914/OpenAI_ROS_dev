@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- Launch the training system -->
+    <node pkg="cartpole_openai_ros_examples" name="cartpole3D_ruippeixotog_algorithm" type="cartpole3D_ruippeixotog_algorithm.py" output="screen"/>
+</launch>

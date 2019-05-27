@@ -1,0 +1,6 @@
+<launch>
+    <!-- This version uses the openai_ros environments -->
+    <rosparam command="load" file="$(find wamv_openai_ros_example)/config/vmrc_openai_qlearn_params_v2.yaml" />
+    <!-- Launch the training system -->
+    <node pkg="wamv_openai_ros_example" name="vmrc_nav_twosets_buoys_qlearn" type="start_qlearning_v2.py" output="screen"/>
+</launch>

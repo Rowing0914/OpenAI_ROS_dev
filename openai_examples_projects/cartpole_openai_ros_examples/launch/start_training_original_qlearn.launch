@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <rosparam command="load" file="$(find cartpole_openai_ros_examples)/config/cartpole_qlearn_params.yaml" />
+    <!-- Launch the training system -->
+    <node pkg="cartpole_openai_ros_examples" name="cartpole_gym" type="start_training_original_qlearn.py" output="screen"/>
+</launch>

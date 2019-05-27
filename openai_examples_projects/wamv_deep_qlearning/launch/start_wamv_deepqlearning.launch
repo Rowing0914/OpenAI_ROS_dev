@@ -1,0 +1,8 @@
+<launch>
+    <!-- Spawn Buoys -->
+    <include file="$(find wamv_deep_qlearning)/launch/spawn_task_buoys.launch"/>
+    <!-- This version uses the openai_ros environments -->
+    <rosparam command="load" file="$(find wamv_deep_qlearning)/config/vmrc_openai_deepqlearn_params.yaml" />
+    <!-- Launch the training system -->
+    <node pkg="wamv_deep_qlearning" name="wamv_deep_qlearning" type="start_deepqlearning.py" output="screen"/>
+</launch>

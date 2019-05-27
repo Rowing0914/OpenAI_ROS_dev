@@ -1,0 +1,12 @@
+monoped: #namespace
+
+    #qlearn parameters
+    task_and_robot_environment_name: 'HopperStayUp-v0'
+    ros_ws_abspath: "/home/user/simulation_ws"
+    alpha: 0.1
+    epsilon: 0.9
+    gamma: 0.7
+    epsilon_discount: 0.999
+    nepisodes: 500
+    nsteps: 10000
+

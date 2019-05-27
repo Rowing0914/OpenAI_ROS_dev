@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package>
+  <name>fetch_openai_ros_example</name>
+  <version>0.0.0</version>
+  <description>The fetch_tests package</description>
+  <maintainer email="user@todo.todo">user</maintainer>
+  <license>TODO</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>openai_ros</build_depend>
+  <build_depend>rospy</build_depend>
+  <run_depend>openai_ros</run_depend>
+  <run_depend>rospy</run_depend>
+</package>

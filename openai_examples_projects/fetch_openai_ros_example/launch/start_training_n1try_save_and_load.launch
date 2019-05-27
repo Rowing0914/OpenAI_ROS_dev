@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <rosparam command="load" file="$(find fetch_tests)/config/fetch_n1try_params.yaml" />
+    <!-- Launch the training system -->
+    <node pkg="fetch_tests" name="fetch_n1try_algorithm" type="fetch_n1try.py" output="screen"/>
+</launch>

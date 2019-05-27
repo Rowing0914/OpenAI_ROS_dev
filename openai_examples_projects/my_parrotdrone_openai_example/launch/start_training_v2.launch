@@ -1,0 +1,6 @@
+<launch>
+    <!-- This version uses the openai_ros environments -->
+    <rosparam command="load" file="$(find my_parrotdrone_openai_example)/config/parrotdrone_openai_qlearn_params_v2.yaml" />
+    <!-- Launch the training system -->
+    <node pkg="my_parrotdrone_openai_example" name="parrotdrone_goto_qlearn" type="start_qlearning_v2.py" output="screen"/>
+</launch>

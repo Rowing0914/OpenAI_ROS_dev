@@ -1,0 +1,63 @@
+fetch: #namespace
+
+    #qlearn parameters
+    
+    alpha: 0.01 # Learning Rate
+    alpha_decay: 0.01
+    gamma: 1.0 # future rewards value 0 none 1 a lot
+    epsilon: 1.0 # exploration, 0 none 1 a lot
+    epsilon_decay: 0.995 # how we reduse the exploration
+    epsilon_min: 0.01 # minimum value that epsilon can have
+    batch_size: 64 # maximum size of the batches sampled from memory
+    episodes_training: 40
+    episodes_running: 10
+    n_win_ticks: 50 # If the mean of rewards is bigger than this and have passed min_episodes, the task is considered finished
+    min_episodes: 10
+    monitor: True
+    quiet: False
+    
+    
+    
+
+    # Fetch Realated parameters
+    n_actions: 6 # X+/-,Y+/-,Z+/-
+    n_observations: 4 # XYZ of the TCP and the distance from GOAL
+    position_ee_max: 1.0
+    position_ee_min: -1.0
+    
+    position_delta: 0.1 # Increments of Decrements in the X/Y/Z positions each action step
+
+    step_punishment: -1
+    closer_reward: 10
+    impossible_movement_punishement: -100
+    reached_goal_reward: 100
+    
+    init_pos: # This has to be validated in the fetch_moveit_test.py in fetch_openai_ros_example or something that tests this pos is possible
+      joint0: 0.0
+      joint1: 0.0
+      joint2: 0.0
+      joint3: 0.0
+      joint4: 0.0
+      joint5: 0.0
+      joint6: 0.0
+      
+    setup_ee_pos: # This has to be validated in the fetch_moveit_test.py in fetch_openai_ros_example or something that tests this pos is possible
+      x: 0.598
+      y: 0.005
+      z: 0.9
+      
+    goal_ee_pos: # This has to be validated in the fetch_moveit_test.py in fetch_openai_ros_example or something that tests this pos is possible
+      x: 0.8
+      y: 0.0
+      z: 1.1
+      
+    max_distance: 3.0 # Maximum distance from EE to the desired GOAL EE
+      
+
+
+    
+    
+    
+    
+
+    
