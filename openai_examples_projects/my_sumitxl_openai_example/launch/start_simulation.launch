@@ -1,4 +1,0 @@
-<launch>
-    <include file="$(find summit_xl_gazebo)/launch/main.launch"/>
-    </include>
-</launch>

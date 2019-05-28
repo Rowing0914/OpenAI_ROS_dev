@@ -1,6 +1,7 @@
 import numpy as np
 import rospy
-from gazebo_msgs.srv import GetWorldProperties, GetModelState
+from gazebo_msgs.srv import GetWorldProperties, GetModelState, SetModelState
+from gazebo_msgs.msg import ModelState
 from sensor_msgs.msg import JointState
 from openai_ros import robot_gazebo_env
 import sys
@@ -270,6 +271,42 @@ class Obj_Pos(object):
         self.time = 0
         self.model_names = world_specs.model_names
         self.get_model_state = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
+        self.reset_state = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
+
+    def reset_position(self):
+        """
+        Randomly initialise the position of the cube on the table
+
+        """
+        state_msg = ModelState()
+        # target object to relocate
+        state_msg.model_name = "cube"
+
+        """
+        TODO: check if the size of the table is correct compared to the paper.
+        right now, we are using the `table.urdf` and is defined as 
+        
+        <origin xyz="-0.23 0 0.215"/>
+        <box size="0.47 0.46 0.3"/>
+        
+        And the size of the cube is 0.06 for each direction(xyz)
+        
+        """
+
+        # set random numbers by taking a size of the cube and the table into consideration
+        state_msg.pose.position.x = np.random.uniform(low=-0.23-0.4, high=-0.23+0.4, size=1)
+        state_msg.pose.position.y = np.random.uniform(low=0.0-0.4,   high=0.0+0.4,   size=1)
+        state_msg.pose.position.z = np.random.uniform(low=0.215-0.2, high=0.215+0.2, size=1)
+        state_msg.pose.orientation.x = 0
+        state_msg.pose.orientation.y = 0
+        state_msg.pose.orientation.z = 0
+        state_msg.pose.orientation.w = 0
+
+        rospy.wait_for_service('/gazebo/set_model_state')
+        try:
+            self.reset_state(state_msg)
+        except rospy.ServiceException, e:
+            print "Service call failed: %s" % e
 
     def get_states(self):
         """

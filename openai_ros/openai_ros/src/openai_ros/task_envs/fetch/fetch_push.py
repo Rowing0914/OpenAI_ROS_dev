@@ -105,8 +105,12 @@ class FetchPushEnv(fetch_env.FetchEnv, utils.EzPickle):
         callbackas have stored last know sesnor data.
         :return:
         """
-        rospy.logdebug("Init Env Variables...")
-        rospy.logdebug("Init Env Variables...END")
+        rospy.logdebug("===== Initialise Env Start")
+        # reset the position of the cube
+        # Note that `self.obj_pos` is initialised at the init of fetch_env!!
+        self.obj_pos.reset_position()
+        rospy.logdebug("===== Initialise Env End")
+
 
     def _set_action(self, action):
         rospy.logwarn("=== Action: {}".format(action))
@@ -125,12 +129,12 @@ class FetchPushEnv(fetch_env.FetchEnv, utils.EzPickle):
         # action = np.concatenate([pos_ctrl, self.rot_ctrl, gripper_ctrl])
 
 
-        # TODO: After speak to Miguel, let's not use this stupid action
+        # TODO: After speak to Miguel, let's not use this, USE above action!!
         action = pos_ctrl
 
         self.movement_result = self.set_trajectory_ee(action)
         if not self.movement_result:
-            assert False, "Action was not in the valid range"
+            assert False, "movement_result failed with the action of : " + str(action)
 
 
     def _get_obs(self):
