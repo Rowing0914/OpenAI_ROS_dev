@@ -108,7 +108,7 @@ class FetchPushEnv(fetch_env.FetchEnv, utils.EzPickle):
         rospy.logdebug("===== Initialise Env Start")
         # reset the position of the cube
         # Note that `self.obj_pos` is initialised at the init of fetch_env!!
-        self.obj_pos.reset_position()
+        self.obj_positions.reset_position()
         rospy.logdebug("===== Initialise Env End")
 
 
@@ -130,7 +130,7 @@ class FetchPushEnv(fetch_env.FetchEnv, utils.EzPickle):
 
 
         # TODO: After speak to Miguel, let's not use this, USE above action!!
-        action = pos_ctrl
+        action = pos_ctrl.tolist()
 
         self.movement_result = self.set_trajectory_ee(action)
         if not self.movement_result:
