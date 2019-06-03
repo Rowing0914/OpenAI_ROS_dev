@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<launch>
-  <include file="$(find fetch_simple_description)/launch/spawn_fetch_xacro.launch"/>
-  <include file="$(find fetch_simple_description)/launch/control_fetch.launch"/>
-</launch>

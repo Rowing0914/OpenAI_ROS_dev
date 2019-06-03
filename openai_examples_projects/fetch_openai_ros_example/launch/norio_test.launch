@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <rosparam command="load" file="$(find fetch_openai_ros_example)/config/fetch_HER_params.yaml" />
+    <!-- Launch the training system -->
+    <node pkg="fetch_openai_ros_example" name="fetch_moveit_test" type="test_fetch_norio.py" output="screen"/>
+</launch>

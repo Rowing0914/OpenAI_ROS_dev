@@ -1,0 +1,15 @@
+moving_cube: #namespace
+
+    # OpenAI_ROS Task_Robot_ENV Name
+    task_and_robot_environment_name: 'MovingCubeOneDiskWalk-v0'
+    ros_ws_abspath: "/home/user/simulation_ws"
+
+    # DeepQ Parameters
+    max_timesteps: 100000 # Maximum time steps of all the steps done throughout all the episodes
+    buffer_size: 50000 # size of the replay buffer
+    lr: 1e-3 # learning rate for adam optimizer
+    exploration_fraction: 0.1 # fraction of entire training period over which the exploration rate is annealed
+    exploration_final_eps: 0.02 # final value of random action probability
+    print_freq: 1 # how often (Ex: 1 means every episode, 2 every two episode we print ) to print out training progress set to None to disable printing
+    
+    reward_task_learned: 10000

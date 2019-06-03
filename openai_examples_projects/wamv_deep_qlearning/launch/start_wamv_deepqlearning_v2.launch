@@ -1,0 +1,6 @@
+<launch>
+    <!-- This version uses the openai_ros environments -->
+    <rosparam command="load" file="$(find wamv_deep_qlearning)/config/vmrc_openai_deepqlearn_params_v2.yaml" />
+    <!-- Launch the training system -->
+    <node pkg="wamv_deep_qlearning" name="wamv_deep_qlearning" type="start_deepqlearning_v2.py" output="screen"/>
+</launch>

@@ -1,0 +1,21 @@
+cartpole_v0: #namespace
+
+    #qlearn parameters
+    task_and_robot_environment_name: 'CartPoleStayUp-v0'
+    ros_ws_abspath: "/home/user/simulation_ws"
+
+    n_observations: 4 # Number of lasers to consider in the observations
+    n_actions: 2 # Number of actions used by algorithm and task
+    episodes_training: 1000
+    n_win_ticks: 250 # If the mean of rewards is bigger than this and have passed min_episodes, the task is considered finished
+    min_episodes: 100
+
+    gamma: 1.0 # future rewards value 0 none 1 a lot
+    epsilon: 1.0 # exploration, 0 none 1 a lot
+    epsilon_min: 0.01 # minimum value that epsilon can have
+    epsilon_decay: 0.995 # how we reduse the exploration
+    alpha: 0.01 # Learning Rate
+    alpha_decay: 0.01
+    batch_size: 64 # maximum size of the batches sampled from memory
+    monitor: True
+    quiet: False

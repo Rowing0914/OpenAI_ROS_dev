@@ -1,1 +1,10 @@
 *.pyc
+turtle2_openai_ros_example/training_results
+husarion_openai_ros_example/training_results/
+my_turtlebot3_openai_example/training_results
+.idea/
+my_hopper_openai_example/training_results/
+my_parrotdrone_openai_example/training_results/
+my_sawyer_openai_example/training_results/
+my_sumitxl_openai_example/training_results/
+wamv_openai_ros_example/training_results/

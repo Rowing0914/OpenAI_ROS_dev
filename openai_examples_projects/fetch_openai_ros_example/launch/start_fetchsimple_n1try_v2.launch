@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <rosparam command="load" file="$(find fetch_openai_ros_example)/config/fetchsimple_n1try_params_v2.yaml" />
+    <!-- Launch the training system -->
+    <node pkg="fetch_openai_ros_example" name="fetchsimple_n1try_algorithm" type="fetchsimple_n1try_openai_ros_v2.py" output="screen"/>
+</launch>

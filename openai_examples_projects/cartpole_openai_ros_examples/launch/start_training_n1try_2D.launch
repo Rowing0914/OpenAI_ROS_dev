@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <rosparam command="load" file="$(find cartpole_openai_ros_examples)/config/cartpole_n1try_params.yaml" />
+    <!-- Launch the training system -->
+    <node pkg="cartpole_openai_ros_examples" name="cartpole3D_mbalunovic_algorithm" type="cartpole2D_n1try_algorithm_with_rosparams.py" output="screen"/>
+</launch>
