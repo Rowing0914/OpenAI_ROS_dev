@@ -5,4 +5,5 @@ this is the repo which has been used for [the tutorial of Hindsight Experience R
 to use this repo, please follow the `installation.sh` and follow the video as well!
 if you want to refer to the original source code on ROSDS, then check the link below.
 
-http://www.rosject.io/l/a0d7e1b/
+ROSDS: http://www.rosject.io/l/a0d7e1b/
+Gitter: https://gitter.im/ROS-Development-Studio/community
